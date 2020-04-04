@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--  
+   ___            _       _           
+  / __\__ _ _ __ | |_ ___| |__   __ _ 
+ / /  / _` | '_ \| __/ __| '_ \ / _` |
+/ /__| (_| | |_) | || (__| | | | (_| |
+\____/\__,_| .__/ \__\___|_| |_|\__,_|
+           |_|                        
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Captcha 2020 - Habitat</title>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Poppins:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+    :root {
+        --primary-color: #000fff;
+        --captcha-2019-primary: #4e1e6f;
+    }
+
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+        font-family: 'Inter', sans-serif;
+        font-size: 22px;
+        width: 100vw;
+        overflow-x: hidden !important;
+    }
+    ::selection {
+     color: white;
+    background: #000fff;
+    } 
+    h1 {
+        font-weight: 700;
+    }
+
+    .blend-in {
+        opacity: 0;
+        transform: translateY(75px);
+        transition: 0.75s ease-out;
+    }
+
+    .visible {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+
+    .font-blue {
+        color: var(--primary-color);
+    }
+
+    .font-black {
+        color: white;
+    }
+
+    header {
+        height: 60vh;
+        position: relative;
+        color: white;
+    }
+
+    #page-title {
+        text-transform: uppercase;
+        position: absolute;
+        top: 33vh;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #background {
+        width: 100vw;
+        height: 50vh;
+        background-image: url("https://media3.giphy.com/media/T4eEmhmzZahj2/giphy.gif?cid=ecf05e47ce1cb9e35401231937e1bc0a2df3b3eeaab63dd9&rid=giphy.gif");
+        background-size: cover;
+        background-position: center;
+    }
+
+    #top-bar {
+        display: flex;
+        background-color: var(--primary-color);
+        height: 10vh;
+        align-items: center;
+        font-weight: 700;
+        font-style: italic;
+        z-index: 5;
+    }
+
+    .marquee {
+        white-space: nowrap;
+        overflow-x: hidden;
+    }
+
+    .marquee span {
+        display: inline-block;
+        padding-left: 0;
+        animation: marquee 300s linear infinite;
+    }
+
+    @keyframes marquee {
+        0% {
+            transform: translate(0, 0);
+        }
+
+        100% {
+            transform: translate(-100%, 0);
+        }
+    }
+
+    .sticky {
+        position: fixed;
+        top: 0;
+        height: auto !important;
+    }
+
+    .content {
+        padding: 12px;
+    }
+
+    #c2019 {
+        color: var(--captcha-2019-primary);
+    }
+
+    #c2019>h1 {
+        width: fit-content;
+        cursor: pointer;
+        padding-left: 0;
+        font-weight: 400;
+        transition: 0.2s ease-out;
+    }
+
+    #c2019>h1:hover {
+        padding-left: 15px;
+
+    }
+
+    #ancor {
+        z-index: 100;
+        width: 100vw;
+        height: 0;
+        background: var(--captcha-2019-primary);
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        transition: 0.3s ease-in;
+    }
+
+    .expand {
+        height: 100vh !important;
+    }
+
+    .section {
+        display: inline-block;
+        width: 100%;
+    }
+
+    .flex {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    @media only screen and (min-width: 1200px) {
+
+        header {
+            height: auto;
+        }
+
+        #background {
+            width: 100%;
+        }
+
+        #page-title {}
+
+
+        #top-bar {
+            color: white;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 52px;
+        }
+
+        .content {
+            padding: 32px;
+        }
+
+        .section:nth-child(1) {
+            width: 60%;
+            font-size: 1.3em;
+        }
+
+        .section:nth-child(1) h1 {
+            color: var(--primary-color);
+        }
+
+        .section:nth-child(2) {
+            width: 30%;
+            font-size: 0.8em;
+        }
+
+        #c2019 {
+            width: 100%;
+        }
+
+        #c2019>h1 {
+            float: right;
+        }
+    }
+</style>
+
+<body>
+    <header>
+
+        <div id="background"></div>
+
+        <h1 id="page-title">habitat</h1>
+
+        <div id="top-bar">
+            <div class="marquee">
+                <span class="marquee-text"></span>
+            </div>
+        </div>
+
+
+    </header>
+    <div class="content">
+
+        <div class="flex">
+
+            <div class="section blend-in">
+                <h1 class="black">
+                    CAPTCHA<br>
+                    DESIGN<br>
+                    FESTIVAL 2020</h1>
+                <p>
+                    The <span class="font-blue">CAPTCHA DESIGN FESTIVAL</span> will be taking place for the 7th time
+                    this september. It is organized by
+                    students of the University of Applied Sciences Mannheim.
+                </p>
+                <p>
+                    Facing the current threat of the coronavirus, we have decided to <span class="font-blue">digitalise
+                        this year’s festival</span>.
+                    True to our tradition, there will be an initial single-day symposium,
+                    a following week of four different workshops, and a final virtual exhibition. Workshop leaders and
+                    participants worldwide connect and communicate via digital tools.
+                </p>
+                <p>
+                    We are eagerly working on creating a virtual experience close to real life. Be prepared for a
+                    <span class="font-blue">futuristic workspace, interdisciplinary projects</span> and an exchange of
+                    extraordinary ideas.
+                </p>
+                <p>
+                    As organizers we are aware of our responsibility towards all designers and participants and take the
+                    spread of this virus very seriously. So stay safe, stay home and <span
+                        class="font-blue">#FlattenTheCurve</span>!
+                </p>
+            </div>
+
+            <div class="section blend-in">
+                <div>
+                    <h1 class="font-blue">TOPIC</h1>
+                    <p>
+                        In a biological context, the term <span class="font-blue">HABITAT</span> is used to describe the
+                        natural environment for living
+                        organisms of all kinds. As we inhabit cities and villages, microorganisms such as bacteria and
+                        viruses inhabit us.
+                    </p>
+                    <p>
+                        In our modern society especially during the ongoing pandemic, <span class="font-blue">we do not
+                            simply live in the
+                            natural, real world</span>. Our minds have merged in another non-physical habitat : the
+                        digital
+                        one.
+                        Within our online design festival Captcha 2020 we <span class="font-blue">create spheres</span>
+                        in
+                        which we explore the limits,
+                        variety and endangering of habitats.
+                    </p>
+                </div>
+            </div>
+
+            <div id="c2019">
+                <h1>-> 2019</h1>
+                <div id="ancor"></div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+<script>
+    const bannerTextString = "WE ARE ONLINE NOW! ";
+
+    const elements = {
+        body: document.querySelector("body"),
+        header: {
+            main: document.querySelector("header"),
+            background: document.querySelector("#background"),
+            marqueeBar: {
+                main: document.querySelector("#top-bar"),
+                text: document.querySelector(".marquee-text")
+            }
+        },
+        content: {
+            main: document.querySelector(".content"),
+            blendInSections: document.querySelectorAll(".blend-in"),
+            c2019Heading: document.querySelector("#c2019 > h1")
+        }
+    }
+
+
+    const breakpoints = {
+        width: {
+            minDesktop: 1200
+        }, height: {
+
+        }
+    }
+
+    c2019.addEventListener("click", e => {
+        document.querySelector("#ancor").classList.add("expand");
+        setTimeout(() => {
+            window.open("http://captchamannheim.de", "_self");
+        }, 300);
+    });
+
+
+    setTimeout(() => elements.content.blendInSections[0].classList.add("visible"), 100);
+
+    window.addEventListener("scroll", e => {
+        if (window.outerWidth < breakpoints.width.minDesktop
+            && window.scrollY >= elements.header.background.clientHeight) {
+            elements.header.marqueeBar.main.classList.add("sticky");
+        } else {
+            elements.header.marqueeBar.main.classList.remove("sticky");
+        }
+
+        elements.content.blendInSections.forEach((section, i) => {
+            if (i > 0)
+                if (window.scrollY + window.outerHeight >= section.offsetTop - 75) {
+                    section.classList.add("visible");
+                }
+        });
+    });
+
+    for (let i = 0; i < 120; i++) {
+        elements.header.marqueeBar.text.textContent += bannerTextString;
+    }
+
+    // responsive
+ /*
+    ['load', 'resize'].forEach(e => window.addEventListener(e, () => {
+        if (window.outerWidth >= breakpoints.width.minDesktop) {
+            elements.content.blendInSections[1].prepend(elements.header.main);
+            elements.body.appendChild(elements.header.marqueeBar.main);
+            document.querySelector(".section:nth-child(1) h1 br").remove();
+        } else {
+            elements.body.prepend(elements.header.main);
+            elements.header.main.append(elements.header.marqueeBar.main);
+        }
+    }));
+*/
+
+</script>
+
+</html>

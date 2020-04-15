@@ -17,24 +17,34 @@
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Poppins:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@300;400;500;600;700&display=swap');
 
     :root {
-        --primary-color: #000fff;
+        --primary-color: #6866ee;
         --captcha-2019-primary: #4e1e6f;
+        --bg-grey: #ededed;
+        --top-bar-height: 60px;
+    }
+
+    ::selection {
+        color: white;
+        background: var(--primary-color);
     }
 
     body {
         margin: 0 !important;
         padding: 0 !important;
         font-family: 'Inter', sans-serif;
-        font-size: 22px;
+        font-size: 17px;
         width: 100vw;
         overflow-x: hidden !important;
+        background: var(--bg-grey);
     }
-    ::selection {
-     color: white;
-    background: #000fff;
-    } 
+
     h1 {
         font-weight: 700;
+    }
+
+    h2 {
+        font-size: 2em;
+        font-weight: normal;
     }
 
     .blend-in {
@@ -52,40 +62,65 @@
         color: var(--primary-color);
     }
 
-    .font-black {
+    .font-small {
+        font-size: 0.8em;
+    }
+
+
+    .font-white {
         color: white;
     }
 
-    header {
-        height: 60vh;
-        position: relative;
-        color: white;
+    #date {
+        display: flex;
+        white-space: nowrap;
+        writing-mode: vertical-rl;
+        align-items: center;
+        position: fixed;
+        right: 10px;
+        /*padding-top: calc(var(--top-bar-height) + 2vh);*/
+        margin-top: var(--top-bar-height);
+        padding-top: 2vh;
+        height: calc(100vh - var(--top-bar-height));
+
     }
 
-    #page-title {
-        text-transform: uppercase;
-        position: absolute;
-        top: 33vh;
-        left: 50%;
-        transform: translateX(-50%);
+    #habitat {
+        font-weight: 700;
+        font-size: 2em;
+        margin-bottom: 8vh;
+        background: var(--primary-color);
+        display: flex;
+        align-items: center;
     }
 
-    #background {
-        width: 100vw;
-        height: 50vh;
-        background-image: url("https://media3.giphy.com/media/T4eEmhmzZahj2/giphy.gif?cid=ecf05e47ce1cb9e35401231937e1bc0a2df3b3eeaab63dd9&rid=giphy.gif");
-        background-size: cover;
-        background-position: center;
+    #habitat>div {
+        padding-top: 91px;
+        margin-left: 10px;
     }
 
     #top-bar {
+        position: fixed;
+        top: 0;
         display: flex;
         background-color: var(--primary-color);
-        height: 10vh;
+        color: var(--bg-grey);
+        height: var(--top-bar-height);
+        font-size: 1em;
         align-items: center;
-        font-weight: 700;
-        font-style: italic;
+        font-weight: 500;
         z-index: 5;
+    }
+
+    #contact {
+        margin-top: 8vh;
+        display: flex;
+        justify-content: center;
+    }
+
+    #contact>div {
+        width: 33%;
+        line-height: 1.8em;
     }
 
     .marquee {
@@ -96,7 +131,7 @@
     .marquee span {
         display: inline-block;
         padding-left: 0;
-        animation: marquee 300s linear infinite;
+        animation: marquee 1600s linear infinite;
     }
 
     @keyframes marquee {
@@ -107,16 +142,6 @@
         100% {
             transform: translate(-100%, 0);
         }
-    }
-
-    .sticky {
-        position: fixed;
-        top: 0;
-        height: auto !important;
-    }
-
-    .content {
-        padding: 12px;
     }
 
     #c2019 {
@@ -154,6 +179,17 @@
     .section {
         display: inline-block;
         width: 100%;
+        padding: 12px;
+        padding-left: 17px;
+        padding-right: 2.55em;
+    }
+
+    .section:first-child h1 {
+        padding-top: 18vh;
+    }
+
+    .topic.section {
+        margin-top: 4vh;
     }
 
     .flex {
@@ -162,18 +198,47 @@
         justify-content: space-between;
     }
 
+
+    @media only screen and (min-width: 360px) {
+        body {
+            font-size: 19px;
+        }
+    }
+
+    @media only screen and (min-width: 414px) {
+        body {
+            font-size: 20px;
+        }
+
+        #top-bar {
+            height: 68px;
+        }
+    }
+
+    @media only screen and (min-height: 810px) {
+        #top-bar {
+            height: 75px;
+        }
+    }
+
+    @media only screen and (min-width: 570px) {
+        body {
+            font-size: 25px
+        }
+
+        .section {
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+    }
+
+
     @media only screen and (min-width: 1200px) {
 
         header {
             height: auto;
         }
-
-        #background {
-            width: 100%;
-        }
-
-        #page-title {}
-
 
         #top-bar {
             color: white;
@@ -187,20 +252,6 @@
             padding: 32px;
         }
 
-        .section:nth-child(1) {
-            width: 60%;
-            font-size: 1.3em;
-        }
-
-        .section:nth-child(1) h1 {
-            color: var(--primary-color);
-        }
-
-        .section:nth-child(2) {
-            width: 30%;
-            font-size: 0.8em;
-        }
-
         #c2019 {
             width: 100%;
         }
@@ -212,106 +263,106 @@
 </style>
 
 <body>
-    <header>
+    <div id="top-bar">
+        <div class="marquee">
+            <span class="marquee-text"></span>
+        </div>
+    </div>
 
-        <div id="background"></div>
 
-        <h1 id="page-title">habitat</h1>
+    </div>
 
-        <div id="top-bar">
-            <div class="marquee">
-                <span class="marquee-text"></span>
+    <div id="date" class="font-small">
+        <div>31 August ––– 15 September</div>
+    </div>
+
+
+
+    <div class="flex">
+
+        <div class="section blend-in">
+            <div></div>
+            <h1 class="font-blue">
+                CAPTCHA<br>
+                DESIGN<br>
+                FESTIVAL 2020</h1>
+            <p>
+                The <span class="font-blue">CAPTCHA DESIGN FESTIVAL</span> will be taking place for the 7th time
+                this August. It is organized by students of the University of Applied Sciences Mannheim.
+            </p>
+            <p>
+                Facing the current threat of the coronavirus, we have decided to <span class="font-blue">digitalise
+                    this year’s festival</span>.
+                True to our tradition, there will be an initial single-day symposium, a following week of four
+                different workshops, and a final virtual exhibition. Workshop leaders and participants worldwide
+                connect and communicate via digital tools.
+            </p>
+            <p>
+                We are eagerly working on creating a virtual experience close to real life. Be prepared for a
+                <span class="font-blue">futuristic workspace, interdisciplinary projects</span> and an exchange of
+                extraordinary ideas.
+            </p>
+            <p>
+                As organizers we are aware of our responsibility towards all designers and participants and take the
+                spread of this virus very seriously. So stay safe, stay home and <span
+                    class="font-blue">#FlattenTheCurve</span>!
+            </p>
+        </div>
+
+        <div class="section blend-in topic">
+            <div>
+
+                <div id="habitat" class="font-white">
+                    <div>HABITAT</div>
+                </div>
+                <p>
+                    In a biological context, the term <span class="font-blue">HABITAT</span> is used to describe the
+                    natural environment for living organisms of all kinds. As we inhabit cities and villages,
+                    microorganisms such as bacteria and viruses inhabit us.
+                </p>
+                <p>
+                    In our modern society especially during the ongoing pandemic, <span class="font-blue">we do not
+                        simply live in thenatural, real world</span>. Our minds have merged with another
+                    non-physical habitat: the digital one. Within our online design festival Captcha 2020 we
+                    <span class="font-blue">create spheres</span> in which we explore the limits, variety and
+                    endangering of habitats.
+                </p>
             </div>
         </div>
 
+        <div id="contact" class="font-small section">
+            <div>instagram </div>
+            <div>facebook </div>
+            <div class="font-blue">mail</div>
+        </div>
 
-    </header>
-    <div class="content">
-
-        <div class="flex">
-
-            <div class="section blend-in">
-                <h1 class="black">
-                    CAPTCHA<br>
-                    DESIGN<br>
-                    FESTIVAL 2020</h1>
-                <p>
-                    The <span class="font-blue">CAPTCHA DESIGN FESTIVAL</span> will be taking place for the 7th time
-                    this september. It is organized by
-                    students of the University of Applied Sciences Mannheim.
-                </p>
-                <p>
-                    Facing the current threat of the coronavirus, we have decided to <span class="font-blue">digitalise
-                        this year’s festival</span>.
-                    True to our tradition, there will be an initial single-day symposium,
-                    a following week of four different workshops, and a final virtual exhibition. Workshop leaders and
-                    participants worldwide connect and communicate via digital tools.
-                </p>
-                <p>
-                    We are eagerly working on creating a virtual experience close to real life. Be prepared for a
-                    <span class="font-blue">futuristic workspace, interdisciplinary projects</span> and an exchange of
-                    extraordinary ideas.
-                </p>
-                <p>
-                    As organizers we are aware of our responsibility towards all designers and participants and take the
-                    spread of this virus very seriously. So stay safe, stay home and <span
-                        class="font-blue">#FlattenTheCurve</span>!
-                </p>
-            </div>
-
-            <div class="section blend-in">
-                <div>
-                    <h1 class="font-blue">TOPIC</h1>
-                    <p>
-                        In a biological context, the term <span class="font-blue">HABITAT</span> is used to describe the
-                        natural environment for living
-                        organisms of all kinds. As we inhabit cities and villages, microorganisms such as bacteria and
-                        viruses inhabit us.
-                    </p>
-                    <p>
-                        In our modern society especially during the ongoing pandemic, <span class="font-blue">we do not
-                            simply live in the
-                            natural, real world</span>. Our minds have merged in another non-physical habitat : the
-                        digital
-                        one.
-                        Within our online design festival Captcha 2020 we <span class="font-blue">create spheres</span>
-                        in
-                        which we explore the limits,
-                        variety and endangering of habitats.
-                    </p>
-                </div>
-            </div>
-
-            <div id="c2019">
-                <h1>-> 2019</h1>
-                <div id="ancor"></div>
-            </div>
-
+        <div id="c2019">
+            <h1>-> 2019</h1>
+            <div id="ancor"></div>
         </div>
 
     </div>
+
+
+
 </body>
 
 <script>
-    const bannerTextString = "WE ARE ONLINE NOW! ";
+    const bannerTextString = "we are online ! we are virtual !  ";
 
     const elements = {
         body: document.querySelector("body"),
-        header: {
-            main: document.querySelector("header"),
-            background: document.querySelector("#background"),
-            marqueeBar: {
-                main: document.querySelector("#top-bar"),
-                text: document.querySelector(".marquee-text")
-            }
+        marqueeBar: {
+            main: document.querySelector("#top-bar"),
+            text: document.querySelector(".marquee-text")
         },
         content: {
             main: document.querySelector(".content"),
             blendInSections: document.querySelectorAll(".blend-in"),
-            c2019Heading: document.querySelector("#c2019 > h1")
+            c2019Heading: document.querySelector("#c2019 > h1"),
+            habitat: document.querySelector("#habitat")
         }
     }
-
 
     const breakpoints = {
         width: {
@@ -321,49 +372,45 @@
         }
     }
 
-    c2019.addEventListener("click", e => {
-        document.querySelector("#ancor").classList.add("expand");
-        setTimeout(() => {
-            window.open("http://captchamannheim.de", "_self");
-        }, 300);
+    window.addEventListener("load", e => {
+        setTimeout(() => elements.content.blendInSections.forEach(s => s.classList.add("visible"), 100));
+
+        for (let i = 0; i < 120; i++) {
+            elements.marqueeBar.text.textContent += bannerTextString;
+        }
     });
 
-
-    setTimeout(() => elements.content.blendInSections[0].classList.add("visible"), 100);
-
     window.addEventListener("scroll", e => {
-        if (window.outerWidth < breakpoints.width.minDesktop
-            && window.scrollY >= elements.header.background.clientHeight) {
-            elements.header.marqueeBar.main.classList.add("sticky");
-        } else {
-            elements.header.marqueeBar.main.classList.remove("sticky");
-        }
-
         elements.content.blendInSections.forEach((section, i) => {
-            if (i > 0)
-                if (window.scrollY + window.outerHeight >= section.offsetTop - 75) {
-                    section.classList.add("visible");
-                }
+            if (i > 0 && window.scrollY + window.outerHeight >= section.offsetTop - 75) {
+                section.classList.add("visible");
+            }
         });
     });
 
-    for (let i = 0; i < 120; i++) {
-        elements.header.marqueeBar.text.textContent += bannerTextString;
-    }
+    c2019.addEventListener("click", e => {
+        document.querySelector("#ancor").classList.add("expand");
+        setTimeout(() => window.open("http://captchamannheim.de", "_self"), 300);
+    });
 
     // responsive
- /*
+
     ['load', 'resize'].forEach(e => window.addEventListener(e, () => {
         if (window.outerWidth >= breakpoints.width.minDesktop) {
-            elements.content.blendInSections[1].prepend(elements.header.main);
-            elements.body.appendChild(elements.header.marqueeBar.main);
-            document.querySelector(".section:nth-child(1) h1 br").remove();
+            if (document.querySelectorAll(".section:nth-child(1) h1 br").length > 1)
+                // wieder einfügen wenns kleiner wird#
+                document.querySelector(".section:nth-child(1) h1 br").remove();
         } else {
-            elements.body.prepend(elements.header.main);
-            elements.header.main.append(elements.header.marqueeBar.main);
+
         }
+
+        // hier 
+        elements.content.habitat.style.height = elements.content.habitat.clientWidth + "px";
+
+
+
     }));
-*/
+
 
 </script>
 

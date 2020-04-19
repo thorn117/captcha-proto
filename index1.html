@@ -97,3 +97,21 @@
     </div>
 
 </body>
+
+<script>
+    const bannerTextString = "we are online! we are virtual! we are digital!";
+
+    const elements = {
+        body: document.querySelector("body"),
+        marqueeBar: {
+            main: document.querySelector("#top-bar"),
+            text: document.querySelector(".marquee-text")
+        }
+    }
+
+    window.addEventListener("load", e => {
+        for (let i = 0; i < 120; i++) {
+            elements.marqueeBar.text.textContent += bannerTextString;
+        }
+    });
+</script>

@@ -15,19 +15,18 @@
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Poppins:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@300;400;500;600;700&display=swap');
-
-    :root {
+     :root {
         --primary-color: #6866ee;
         --captcha-2019-primary: #4e1e6f;
         --bg-grey: #ededed;
-        --top-bar-height: 60px;
+        --top-bar-height: 80px;
     }
-
-    ::selection {
+    
+     ::selection {
         color: white;
         background: var(--primary-color);
     }
-
+    
     body {
         margin: 0 !important;
         padding: 0 !important;
@@ -37,40 +36,39 @@
         overflow-x: hidden !important;
         background: var(--bg-grey);
     }
-
+    
     h1 {
         font-weight: 700;
     }
-
+    
     h2 {
         font-size: 2em;
         font-weight: normal;
     }
-
+    
     .blend-in {
         opacity: 0;
         transform: translateY(75px);
         transition: 0.75s ease-out;
     }
-
+    
     .visible {
         opacity: 1 !important;
         transform: translateY(0) !important;
     }
-
+    
     .font-blue {
         color: var(--primary-color);
     }
-
+    
     .font-small {
         font-size: 0.8em;
     }
-
-
+    
     .font-white {
         color: white;
     }
-
+    
     #date {
         display: flex;
         white-space: nowrap;
@@ -82,9 +80,8 @@
         margin-top: var(--top-bar-height);
         padding-top: 2vh;
         height: calc(100vh - var(--top-bar-height));
-
     }
-
+    
     #habitat {
         font-weight: 700;
         font-size: 2em;
@@ -93,12 +90,12 @@
         display: flex;
         align-items: center;
     }
-
+    
     #habitat>div {
         padding-top: 91px;
         margin-left: 10px;
     }
-
+    
     #top-bar {
         position: fixed;
         top: 0;
@@ -111,43 +108,42 @@
         font-weight: 500;
         z-index: 5;
     }
-
+    
     #contact {
         margin-top: 8vh;
         display: flex;
         justify-content: center;
     }
-
+    
     #contact>div {
         width: 33%;
         line-height: 1.8em;
     }
-
+    
     .marquee {
         white-space: nowrap;
         overflow-x: hidden;
     }
-
+    
     .marquee span {
         display: inline-block;
         padding-left: 0;
         animation: marquee 1600s linear infinite;
     }
-
+    
     @keyframes marquee {
         0% {
             transform: translate(0, 0);
         }
-
         100% {
             transform: translate(-100%, 0);
         }
     }
-
+    
     #c2019 {
         color: var(--captcha-2019-primary);
     }
-
+    
     #c2019>h1 {
         width: fit-content;
         cursor: pointer;
@@ -155,12 +151,11 @@
         font-weight: 400;
         transition: 0.2s ease-out;
     }
-
+    
     #c2019>h1:hover {
         padding-left: 15px;
-
     }
-
+    
     #ancor {
         z-index: 100;
         width: 100vw;
@@ -171,11 +166,11 @@
         left: 0;
         transition: 0.3s ease-in;
     }
-
+    
     .expand {
         height: 100vh !important;
     }
-
+    
     .section {
         display: inline-block;
         width: 100%;
@@ -183,63 +178,56 @@
         padding-left: 17px;
         padding-right: 2.55em;
     }
-
+    
     .section:first-child h1 {
         padding-top: 18vh;
     }
-
+    
     .topic.section {
         margin-top: 4vh;
     }
-
+    
     .flex {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
     }
-
-
+    
     @media only screen and (min-width: 360px) {
         body {
             font-size: 19px;
         }
     }
-
+    
     @media only screen and (min-width: 414px) {
         body {
             font-size: 20px;
         }
-
         #top-bar {
             height: 68px;
         }
     }
-
+    
     @media only screen and (min-height: 810px) {
         #top-bar {
             height: 75px;
         }
     }
-
+    
     @media only screen and (min-width: 570px) {
         body {
             font-size: 25px
         }
-
         .section {
             padding-left: 24px;
             padding-right: 24px;
         }
-
     }
-
-
+    
     @media only screen and (min-width: 1200px) {
-
         header {
             height: auto;
         }
-
         #top-bar {
             color: white;
             position: fixed;
@@ -247,15 +235,12 @@
             left: 0;
             height: 52px;
         }
-
         .content {
             padding: 32px;
         }
-
         #c2019 {
             width: 100%;
         }
-
         #c2019>h1 {
             float: right;
         }
@@ -283,29 +268,22 @@
         <div class="section blend-in">
             <div></div>
             <h1 class="font-blue">
-                CAPTCHA<br>
-                DESIGN<br>
-                FESTIVAL 2020</h1>
+                CAPTCHA<br> DESIGN
+                <br> FESTIVAL 2020</h1>
             <p>
-                The <span class="font-blue">CAPTCHA DESIGN FESTIVAL</span> will be taking place for the 7th time
-                this August. It is organized by students of the University of Applied Sciences Mannheim.
+                The <span class="font-blue">CAPTCHA DESIGN FESTIVAL</span> will be taking place for the 7th time this August. It is organized by students of the University of Applied Sciences Mannheim.
             </p>
             <p>
                 Facing the current threat of the coronavirus, we have decided to <span class="font-blue">digitalise
-                    this year’s festival</span>.
-                True to our tradition, there will be an initial single-day symposium, a following week of four
-                different workshops, and a final virtual exhibition. Workshop leaders and participants worldwide
-                connect and communicate via digital tools.
+                    this year’s festival</span>. True to our tradition, there will be an initial single-day symposium, a following week of four different workshops, and a final virtual exhibition. Workshop leaders and participants worldwide connect and
+                communicate via digital tools.
             </p>
             <p>
                 We are eagerly working on creating a virtual experience close to real life. Be prepared for a
-                <span class="font-blue">futuristic workspace, interdisciplinary projects</span> and an exchange of
-                extraordinary ideas.
+                <span class="font-blue">futuristic workspace, interdisciplinary projects</span> and an exchange of extraordinary ideas.
             </p>
             <p>
-                As organizers we are aware of our responsibility towards all designers and participants and take the
-                spread of this virus very seriously. So stay safe, stay home and <span
-                    class="font-blue">#FlattenTheCurve</span>!
+                As organizers we are aware of our responsibility towards all designers and participants and take the spread of this virus very seriously. So stay safe, stay home and <span class="font-blue">#FlattenTheCurve</span>!
             </p>
         </div>
 
@@ -316,16 +294,13 @@
                     <div>HABITAT</div>
                 </div>
                 <p>
-                    In a biological context, the term <span class="font-blue">HABITAT</span> is used to describe the
-                    natural environment for living organisms of all kinds. As we inhabit cities and villages,
-                    microorganisms such as bacteria and viruses inhabit us.
+                    In a biological context, the term <span class="font-blue">HABITAT</span> is used to describe the natural environment for living organisms of all kinds. As we inhabit cities and villages, microorganisms such as bacteria and viruses
+                    inhabit us.
                 </p>
                 <p>
                     In our modern society especially during the ongoing pandemic, <span class="font-blue">we do not
-                        simply live in thenatural, real world</span>. Our minds have merged with another
-                    non-physical habitat: the digital one. Within our online design festival Captcha 2020 we
-                    <span class="font-blue">create spheres</span> in which we explore the limits, variety and
-                    endangering of habitats.
+                        simply live in thenatural, real world</span>. Our minds have merged with another non-physical habitat: the digital one. Within our online design festival Captcha 2020 we
+                    <span class="font-blue">create spheres</span> in which we explore the limits, variety and endangering of habitats.
                 </p>
             </div>
         </div>
@@ -367,7 +342,8 @@
     const breakpoints = {
         width: {
             minDesktop: 1200
-        }, height: {
+        },
+        height: {
 
         }
     }
@@ -398,7 +374,7 @@
     ['load', 'resize'].forEach(e => window.addEventListener(e, () => {
         if (window.outerWidth >= breakpoints.width.minDesktop) {
             if (document.querySelectorAll(".section:nth-child(1) h1 br").length > 1)
-                // wieder einfügen wenns kleiner wird#
+            // wieder einfügen wenns kleiner wird#
                 document.querySelector(".section:nth-child(1) h1 br").remove();
         } else {
 
@@ -410,8 +386,6 @@
 
 
     }));
-
-
 </script>
 
 </html>

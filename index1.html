@@ -142,9 +142,10 @@
     }
     
     #logo {
+        padding-top: 1em;
         display: flex;
         justify-content: center;
-        padding-bottom: 3em;
+        padding-bottom: 4em;
     }
     
     #c2019 h3 {
@@ -154,7 +155,7 @@
     }
     
     #c2019 {
-        padding-left: 118px;
+        padding-left: 38vw;
         padding-bottom: 1em;
         padding-top: 1em;
     }
@@ -162,6 +163,53 @@
     #contact {
         color: var(--primary-color);
         padding: 3em 28px 0em 28px;
+        line-height: 1.8;
+    }
+    
+    @media only screen and (min-width: 360px) {
+        body {
+            font-size: 19px;
+        }
+        .section {
+            padding-left: 35px;
+            padding-right: 35px;
+        }
+        #contact {
+            padding-left: 35px;
+        }
+    }
+    
+    @media only screen and (min-width: 414px) {
+        body {
+            font-size: 21px;
+        }
+        .section {
+            padding-left: 46px;
+            padding-right: 49px;
+        }
+        #date {
+            right: 15px;
+        }
+        #contact {
+            padding-left: 46px;
+        }
+        #top-bar {
+            top: 30px;
+        }
+    }
+    
+    @media only screen and (min-width: 370px) and (min-height:812px) {
+        .section {
+            padding-top: 5em;
+            padding-bottom: 6em;
+        }
+        #header h1 {
+            font-size: 2.9em;
+        }
+        #header {
+            padding-top: 1em;
+            padding-bottom: 4em;
+        }
     }
 </style>
 
@@ -177,7 +225,8 @@
         <h1>
             CAPTCHA<br> DESIGN
             <br> FESTIVAL 2020</h1>
-        <div id="date">31. AUGUST — 15. SEPTEMBER</div>
+        <div id="date"><span class="letter">3</span><span class="letter">1</span><span class="letter">.</span> <span class="letter">A</span><span class="letter">U</span><span class="letter">G</span><span class="letter">U</span><span class="letter">S</span><span class="letter">T</span>            <span class="letter">—</span> <span class="letter">1</span><span class="letter">5</span><span class="letter">.</span> <span class="letter">S</span><span class="letter">E</span><span class="letter">P</span><span class="letter">T</span>
+            <span class="letter">E</span><span class="letter">M</span><span class="letter">B</span><span class="letter">E</span><span class="letter">R</span></div>
     </div>
 
     <div id="digital" class="section regular">
@@ -234,7 +283,7 @@
 </body>
 
 <script>
-    const bannerTextString = "we are online! we are virtual! we are digital!";
+    const bannerTextString = "we are online! we are virtual! we are digital! ";
 
     const elements = {
         body: document.querySelector("body"),

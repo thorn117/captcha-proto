@@ -204,6 +204,21 @@
         #top-bar {
             top: 30px;
         }
+        #logo svg {
+            height: 115px;
+        }
+    }
+    
+    @media only screen and (min-width: 460px) {
+        body {
+            font-size: 25px;
+        }
+        #logo svg {
+            height: 135px;
+        }
+        #header h1 {
+            font-size: 2.5em;
+        }
     }
     
     @media only screen and (min-width: 370px) and (min-height:812px) {
@@ -217,6 +232,32 @@
         #header {
             padding-top: 1em;
             padding-bottom: 4em;
+        }
+    }
+    
+    @media only screen and (min-width: 600px) and (min-height:850px) {
+        .section {
+            padding-left: 65px;
+            padding-right: 65px;
+        }
+        #contact {
+            padding-left: 65px;
+        }
+        #c2019 {
+            padding-left: 45vw;
+        }
+    }
+    
+    @media only screen and (min-width: 660px) {
+        body {
+            font-size: 30px;
+        }
+    }
+    
+    @media only screen and (min-width: 750px) {
+        #header {
+            display: flex;
+            justify-content: center;
         }
     }
 </style>
@@ -304,9 +345,25 @@
         }
     }
 
+
+    const breakpoints = {
+        width: {
+            minDesktop: 750
+        },
+        height: {
+
+        }
+    }
+
     window.addEventListener("load", e => {
         for (let i = 0; i < 120; i++) {
             elements.marqueeBar.text.textContent += bannerTextString;
         }
     });
+
+    ['load', 'resize'].forEach(e => window.addEventListener(e, () => {
+        if (window.outerWidth >= breakpoints.width.minDesktop) {
+            elements.marqueeBar.main.remove(elements.marqueeBar.main);
+        }
+    }));
 </script>

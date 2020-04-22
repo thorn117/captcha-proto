@@ -275,7 +275,7 @@
             height: 100%;
             align-items: flex-start;
             padding-top: 1em;
-            font-size: 1em;
+            font-size: 0.77em;
         }
         .text {
             padding-left: 50px;
@@ -283,6 +283,11 @@
         }
         .section {
             padding: 5em 100px 5em 100px;
+        }
+        #digital h2 {
+            color: white;
+            display: block;
+            padding-bottom: 1.5em;
         }
         #contact {
             position: fixed;
@@ -297,10 +302,22 @@
         }
         #cite {
             padding-top: 2em;
+            padding-bottom: 2em;
         }
         #cite h2 {
             font-size: 1.3em;
             width: 50vw;
+        }
+        #stay-home {
+            background: var(--bg-grey);
+            color: black;
+            padding-top: 2px;
+            padding-bottom: 2em;
+        }
+        #c2019 {
+            background: var(--bg-grey);
+            margin: 0;
+            padding-left: 60vw;
         }
     }
 </style>
@@ -360,8 +377,9 @@
                         transform="translate(-108.04 -55.36)" />
                 </svg>
             </div>
-
-            <p>As organizers we are aware of our responsibility towards all designers and participants and take this pandemic very seriously. So stay safe, stay home and #FlattenTheCurve! </p>
+            <div class="text">
+                <p>As organizers we are aware of our responsibility towards all designers and participants and take this pandemic very seriously. So stay safe, stay home and #FlattenTheCurve! </p>
+            </div>
         </div>
     </div>
 
@@ -388,6 +406,9 @@
         }
     }
 
+    const logo = document.querySelector("#logo")
+
+    const digital = document.querySelector("#digital")
 
     const breakpoints = {
         width: {
@@ -407,6 +428,14 @@
     ['load', 'resize'].forEach(e => window.addEventListener(e, () => {
         if (window.outerWidth >= breakpoints.width.minDesktop) {
             elements.marqueeBar.main.remove(elements.marqueeBar.main);
+            logo.remove(logo);
+            /*var digitalheadlinediv = document.createElement("div");
+            var digitalText = document.createElement("h2");
+            var node = document.createTextNode("WE ARE DIGITAL");
+            digitalText.appendChild(node);
+            digitalheadlinediv.appendChild(digitalText);
+            digitalheadlinediv.setAttribute('id', "digitalheadline");
+            digital.insertBefore(digitalheadlinediv, digital.childNodes[0]);*/
         }
     }));
 </script>

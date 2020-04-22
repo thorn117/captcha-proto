@@ -415,7 +415,7 @@
             minDesktop: 750
         },
         height: {
-
+            maxDesktop: 750
         }
     }
 
@@ -426,7 +426,7 @@
     });
 
     ['load', 'resize'].forEach(e => window.addEventListener(e, () => {
-        if (window.outerWidth >= breakpoints.width.minDesktop) {
+        if (window.outerWidth >= breakpoints.width.minDesktop), (window.outerHeight <= breakpoints.height.maxDesktop) {
             elements.marqueeBar.main.remove(elements.marqueeBar.main);
             logo.remove(logo);
             /*var digitalheadlinediv = document.createElement("div");

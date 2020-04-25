@@ -14,7 +14,7 @@
 <title>Captcha 2020 - Habitat</title>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Poppins:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@300;400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
      :root {
         --primary-color: #6866ee;
         --captcha-2019-primary: #4e1e6f;
@@ -27,6 +27,29 @@
         background: var(--primary-color);
     }
     
+    #animatedlogo {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: translate(-50%, -50%);
+        width: 100px;
+        height: 100px;
+        animation: bigger 5s infinite;
+    }
+    
+    @keyframes bigger {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.2);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+    
     body {
         margin: 0 !important;
         padding: 0 !important;
@@ -37,7 +60,7 @@
     }
     
     h1 {
-        font-weight: bold;
+        font-weight: 800;
         color: var(--primary-color);
     }
     
@@ -122,7 +145,7 @@
         color: white;
     }
     
-    #digital>h2 {
+    #digital h2 {
         display: none;
     }
     
@@ -141,6 +164,10 @@
         fill: white;
     }
     
+    .cls-2 {
+        fill: var(--primary-color);
+    }
+    
     #logo svg {
         height: 100px;
     }
@@ -156,12 +183,28 @@
         color: var(--captcha-2019-primary);
         font-weight: normal;
         font-size: 1.6em;
+        cursor: pointer;
     }
     
     #c2019 {
         padding-left: 38vw;
         padding-bottom: 1em;
         padding-top: 1em;
+    }
+    
+    .expand {
+        height: 100vh !important;
+    }
+    
+    #ancor {
+        z-index: 100;
+        width: 100vw;
+        height: 0;
+        background: var(--captcha-2019-primary);
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        transition: 0.3s ease-in;
     }
     
     #contact {
@@ -172,6 +215,19 @@
     
     #contact a {
         color: var(--primary-color);
+    }
+    
+    #footer {
+        padding: 1em;
+        background: var(--primary-color);
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    #footer a {
+        padding-right: 2em;
+        color: white;
+        font-size: 0.77em;
     }
     
     @media only screen and (min-width: 360px) {
@@ -255,20 +311,15 @@
     }
     
     @media only screen and (min-width: 750px) {
-        .section {
-            padding-left: 13vw;
-            padding-right: 13vw;
-            padding-top: 25vh;
-            padding-top: 25vh;
+        #animatedlogo {
+            display: block;
         }
-        h2{
+        h2 {
             margin-top: 0;
+            font-size: 2em;
         }
         #contact {
             padding-left: 90px;
-        }
-        #date {
-            right: 26px;
         }
         body {
             font-size: 20px;
@@ -299,12 +350,23 @@
             height: 100%;
             align-items: flex-start;
             padding-top: 1em;
-            font-size: 2vh;
+            font-size: 1em;
         }
         #digital h2 {
             color: white;
-            display: block;
-            padding-bottom: 1.5em;
+            display: inline;
+            padding-right: 4px;
+            position: relative;
+            border-right: .05em solid;
+            animation: cursor-blink 1s steps(1) infinite;
+        }
+        #digital .text {
+            margin-top: 1.7em;
+        }
+        @keyframes cursor-blink {
+            50% {
+                border-right-color: transparent;
+            }
         }
         #contact {
             position: fixed;
@@ -317,8 +379,8 @@
             font-size: 0.77em;
             padding-right: 8px;
         }
-       #cite {
-             padding-top: 5em;
+        #cite {
+            padding-top: 5em;
             padding-bottom: 2em;
         }
         #cite h2 {
@@ -334,10 +396,13 @@
             padding-top: 2px;
             padding-bottom: 2em;
         }
+        #stay-home .text .font-white {
+            color: var(--primary-color);
+        }
         #c2019 {
             background: var(--bg-grey);
             margin: 0;
-            padding-left: 60vw;
+            padding-left: 55vw;
         }
     }
     
@@ -353,16 +418,17 @@
         #habitat .text .font-blue {
             padding-bottom: 1em;
         }
+        #c-2019 {
+            padding-left: 66vw;
+        }
     }
     
     @media only screen and (min-width: 1200px) {
         .text {
-            padding-left: 135px;
+            padding-left: 145px;
             padding-right: 135px;
         }
-        #header h1 {
-            padding-left: 135px;
-        }
+        #header h1,
         #date {
             padding-left: 135px;
         }
@@ -372,21 +438,37 @@
     }
     
     @media only screen and (min-width: 1400px) {
-        body{
+        body {
             font-size: 25px;
         }
-        .text{
-            padding-left:170px;
+        #header h1 {
+            font-size: 9vh;
+        }
+        .text,
+        #header h1,
+        #date {
+            padding-left: 170px;
         }
         .section {
             padding: 20vh 14vw 20vh 14vw;
         }
-        
     }
     
     @media only screen and (min-width: 1600px) {
+        body {
+            font-size: 28px;
+        }
+        .text,
+        #date,
+        #header h1 {
+            padding-left: 216px;
+            padding-right: 216px;
+        }
         #contact {
-            right: 12vw;
+            right: 11vw;
+        }
+        #footer {
+            padding-right: calc(11vw - 2em);
         }
     }
 </style>
@@ -399,16 +481,22 @@
         </div>
     </div>
 
+    <div id="animatedlogo"><svg id="Ebene_1" data-name="Ebene 1" viewBox="0 0 357.53 471.65">
+        <path class="cls-2"
+            d="M428.36,176.66c-46.48,28-72.07,30.14-102.33-3.58-29.53-46.66-112-37.78-119.89,5.38,2.68,40.87,39.34,82.29,56.43,117.38,17.36,45.5,34.51,133.14,68.78,141,17.09,3.93,38.11-1.79,55.43-36.9,4.62-29-4.48-56.43,1.85-70.5,3.39-7.54,21.48-8.08,37.42-15,28.89-12.57,35.57,5.18,38.57,30.95,4.85,41.71-10,108.06-20.67,127-33.5,59.13-107.15,61.14-152.66,48.1-99-62.84-84.35-111.88-103.38-157.76-64.6-92.12-81-99.64-79.81-195.4,1.44-39.84,22.3-46.95,60.44-80.08C303.63-15.63,439.44,162.11,428.36,176.66Z"
+            transform="translate(-108.04 -55.36)" />
+    </svg></div>
+
     <div id="header" class="section">
         <h1>
-            CAPTCHA<br> DESIGN
-            <br> FESTIVAL 2020</h1>
+            Captcha<br> Design
+            <br> Festival 2020</h1>
         <div id="date"><span class="letter">3</span><span class="letter">1</span><span class="letter">.</span> <span class="letter">A</span><span class="letter">U</span><span class="letter">G</span><span class="letter">U</span><span class="letter">S</span><span class="letter">T</span>            <span class="letter">—</span> <span class="letter">1</span><span class="letter">5</span><span class="letter">.</span> <span class="letter">S</span><span class="letter">E</span><span class="letter">P</span><span class="letter">T</span>
             <span class="letter">E</span><span class="letter">M</span><span class="letter">B</span><span class="letter">E</span><span class="letter">R</span></div>
     </div>
 
     <div id="digital" class="section regular">
-        <h2>WE ARE DIGITAL</h2>
+        <h2 id="digitalHeader"></h2>
 
         <div class="text">
             <p>The CAPTCHA Design Festival will be taking place for the 7th time this August. It is organized by students of the University of Applied Sciences Mannheim. </p>
@@ -420,7 +508,7 @@
     </div>
 
     <div id="habitat" class="section regular">
-        <h2>HABITAT</h2>
+        <h2>Habitat</h2>
         <div class="text">
             <div class="font-blue">from lat. habitāre | [ˈhæb.ə.tæt]</div>
             <p>This year's topic for the festival is <span class="font-blue">HABITAT</span>. In a biological context, the term is used to describe the natural environment for living organisms of all kinds. As we inhabit cities and villages, microorganisms
@@ -447,7 +535,7 @@
                 </svg>
             </div>
             <div class="text">
-                <p>As organizers we are aware of our responsibility towards all designers and participants and take this pandemic very seriously. So stay safe, stay home and #FlattenTheCurve! </p>
+                <p>As organizers we are aware of our responsibility towards all designers and participants and take this pandemic very seriously. So stay safe, stay home and <span class="font-white">#FlattenTheCurve!</span> </p>
             </div>
         </div>
     </div>
@@ -460,8 +548,12 @@
 
     <div id="c2019" class="section regular">
         <h3>see what we <br>did → 2019</h3>
+        <div id="ancor"></div>
     </div>
-
+    <div id="footer">
+        <a>Imprint</a>
+        <a>Privacy Policy</a>
+    </div>
 </body>
 
 <script>
@@ -472,21 +564,52 @@
         marqueeBar: {
             main: document.querySelector("#top-bar"),
             text: document.querySelector(".marquee-text")
-        }
+        },
+        digital: document.querySelector("#digitalHeader"),
+        c2019Heading: document.querySelector("#c2019> h3")
     }
 
-    const logo = document.querySelector("#logo")
 
-    const digital = document.querySelector("#digital")
 
     const breakpoints = {
         width: {
             minDesktop: 750
         },
         height: {
-            maxDesktop: 800
+
         }
     }
+
+    const logo = document.querySelector("#animatedlogo");
+
+    let mouseX = 0;
+    let mouseY = 0;
+
+    let logoX = 0;
+    let logoY = 0;
+
+    let speed = 0.04;
+
+    function animate() {
+        let distX = mouseX - logoX;
+        let distY = mouseY - logoY;
+
+        logoX = logoX + (distX * speed);
+        logoY = logoY + (distY * speed);
+
+        logo.style.left = logoX + "px";
+        logo.style.top = logoY + "px";
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    document.addEventListener('mousemove', event => {
+        mouseX = event.pageX
+        mouseY = event.pageY
+
+    });
 
     window.addEventListener("load", e => {
         for (let i = 0; i < 120; i++) {
@@ -506,4 +629,23 @@
             digital.insertBefore(digitalheadlinediv, digital.childNodes[0]);*/
         }
     }));
+
+    window.addEventListener("scroll", e => {
+        if (window.outerWidth >= breakpoints.width.minDesktop) {
+            if ((window.scrollY + window.outerHeight >= elements.digital.offsetTop + 0.3 * window.outerHeight) &&
+                elements.digital.textContent.length === 0) {
+                write("We are digital", elements.digital, 100);
+            }
+        };
+    });
+
+
+    const write = (string, target, delay) => [...string].forEach((c, i) =>
+        setTimeout(() => target.textContent += c, i * delay));
+
+
+    c2019.addEventListener("click", e => {
+        document.querySelector("#ancor").classList.add("expand");
+        setTimeout(() => window.open("http://captchamannheim.de", "_self"), 300);
+    });
 </script>

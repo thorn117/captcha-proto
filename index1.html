@@ -135,6 +135,7 @@
         font-size: 0.76em;
     }
     
+    #digital h2::selection,
     #digital p::selection {
         color: var(--primary-color);
         background: white;
@@ -184,12 +185,12 @@
         font-weight: normal;
         font-size: 1.6em;
         cursor: pointer;
+        float: right;
     }
     
     #c2019 {
-        padding-left: 38vw;
-        padding-bottom: 1em;
-        padding-top: 1em;
+        padding-top: 0;
+        padding-bottom: 7em;
     }
     
     .expand {
@@ -218,14 +219,15 @@
     }
     
     #footer {
-        padding: 1em;
+        padding-top: 1em;
+        padding-bottom: 2em;
         background: var(--primary-color);
-        display: flex;
-        justify-content: flex-end;
+        padding-right: 10px;
     }
     
     #footer a {
-        padding-right: 2em;
+        padding-right: 35px;
+        float: right;
         color: white;
         font-size: 0.77em;
     }
@@ -249,6 +251,9 @@
         }
         .section {
             padding-left: 46px;
+            padding-right: 49px;
+        }
+        #footer a {
             padding-right: 49px;
         }
         #date {
@@ -292,15 +297,13 @@
     }
     
     @media only screen and (min-width: 600px) and (min-height:850px) {
-        .section {
+        .section,
+        #contact {
             padding-left: 65px;
             padding-right: 65px;
         }
-        #contact {
-            padding-left: 65px;
-        }
-        #c2019 {
-            padding-left: 45vw;
+        #footer a {
+            padding-right: 65px;
         }
     }
     
@@ -373,12 +376,10 @@
             padding: 0;
             margin: 0;
             bottom: 10vh;
-            right: 20px;
+            right: 28px;
             line-height: 1.6;
             text-align: right;
             font-size: 0.77em;
-            padding-right: 8px;
-            margin-left: 90px;
         }
         #cite {
             padding-top: 5em;
@@ -401,9 +402,11 @@
             color: var(--primary-color);
         }
         #c2019 {
+            padding-right: calc(11vw + 50px);
             background: var(--bg-grey);
-            margin: 0;
-            padding-left: 55vw;
+        }
+        #footer a {
+            padding-right: 28px;
         }
     }
     
@@ -419,8 +422,10 @@
         #habitat .text .font-blue {
             padding-bottom: 1em;
         }
-        #c-2019 {
-            padding-left: 66vw;
+        #c2019 {
+            padding-right: calc(15vw + 50px);
+            margin-top: -224px;
+            padding-bottom: 14em;
         }
     }
     
@@ -428,6 +433,9 @@
         .text {
             padding-left: 145px;
             padding-right: 135px;
+        }
+        #c2019 {
+            padding-right: calc(15vw + 135px);
         }
         #header h1,
         #date {
@@ -448,16 +456,24 @@
         .text,
         #header h1,
         #date {
-            padding-left: 170px;
+            padding-left: 182px;
         }
         .section {
             padding: 20vh 14vw 20vh 14vw;
+        }
+        #c2019 {
+            margin-top: -309px;
+            padding-bottom: 17em;
         }
     }
     
     @media only screen and (min-width: 1600px) {
         body {
             font-size: 28px;
+        }
+        #c2019 {
+            margin-top: -340px;
+            padding-right: calc(15vw + 216px);
         }
         .text,
         #date,
@@ -466,10 +482,43 @@
             padding-right: 216px;
         }
         #contact {
-            right: 11vw;
+            right: 100px;
         }
         #footer {
-            padding-right: calc(11vw - 2em);
+            padding-right: 72px;
+        }
+    }
+    
+    @media only screen and (min-width: 2100px) {
+        body {
+            font-size: 35px;
+        }
+        .section {
+            padding-top: 25vh;
+            padding-bottom: 25vh;
+        }
+        #cite h2,
+        #stay-home .text {
+            width: 840px;
+        }
+        #date,
+        #header h1,
+        .text {
+            padding-left: 262px;
+        }
+    }
+    
+    @media only screen and (min-width: 2800px) {
+        body {
+            font-size: 46px;
+        }
+        #c2019 {
+            margin-top: -490px;
+        }
+        #date,
+        #header h1,
+        .text {
+            padding-left: 335px;
         }
     }
 </style>
@@ -492,8 +541,11 @@
         <h1>
             Captcha<br> Design
             <br> Festival 2020</h1>
-        <div id="date"><span class="letter">3</span><span class="letter">1</span><span class="letter">.</span> <span class="letter">A</span><span class="letter">U</span><span class="letter">G</span><span class="letter">U</span><span class="letter">S</span><span class="letter">T</span>            <span class="letter">—</span> <span class="letter">1</span><span class="letter">5</span><span class="letter">.</span> <span class="letter">S</span><span class="letter">E</span><span class="letter">P</span><span class="letter">T</span>
-            <span class="letter">E</span><span class="letter">M</span><span class="letter">B</span><span class="letter">E</span><span class="letter">R</span></div>
+        <div id="date"><span class="letter">3</span><span class="letter">1</span><span class="letter">.</span>&nbsp;<span class="letter">A</span><span class="letter">U</span><span class="letter">G</span><span class="letter">U</span><span class="letter">S</span>
+            <span
+                class="letter">T</span>&nbsp;
+                <span class="letter">—</span>&nbsp;<span class="letter">1</span><span class="letter">5</span><span class="letter">.</span>&nbsp;<span class="letter">S</span><span class="letter">E</span><span class="letter">P</span><span class="letter">T</span>
+                <span class="letter">E</span><span class="letter">M</span><span class="letter">B</span><span class="letter">E</span><span class="letter">R</span></div>
     </div>
 
     <div id="digital" class="section regular">

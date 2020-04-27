@@ -130,6 +130,7 @@
         align-items: center;
         position: fixed;
         right: 10px;
+        color: var(--primary-color);
         padding-top: 30px;
         height: calc(100vh - var(--top-bar-height));
         font-size: 0.76em;
@@ -542,10 +543,9 @@
             Captcha<br> Design
             <br> Festival 2020</h1>
         <div id="date"><span class="letter">3</span><span class="letter">1</span><span class="letter">.</span>&nbsp;<span class="letter">A</span><span class="letter">U</span><span class="letter">G</span><span class="letter">U</span><span class="letter">S</span>
-            <span
-                class="letter">T</span>&nbsp;
-                <span class="letter">—</span>&nbsp;<span class="letter">1</span><span class="letter">5</span><span class="letter">.</span>&nbsp;<span class="letter">S</span><span class="letter">E</span><span class="letter">P</span><span class="letter">T</span>
-                <span class="letter">E</span><span class="letter">M</span><span class="letter">B</span><span class="letter">E</span><span class="letter">R</span></div>
+            <span class="letter">T</span>&nbsp;
+            <span class="letter">—</span>&nbsp;<span class="letter">1</span><span class="letter">5</span><span class="letter">.</span>&nbsp;<span class="letter">S</span><span class="letter">E</span><span class="letter">P</span><span class="letter">T</span>
+            <span class="letter">E</span><span class="letter">M</span><span class="letter">B</span><span class="letter">E</span><span class="letter">R</span></div>
     </div>
 
     <div id="digital" class="section regular">
@@ -622,6 +622,7 @@
         header: document.querySelector("#header"),
         digital: document.querySelector("#digital"),
         digitalHeader: document.querySelector("#digitalHeader"),
+        stayHome: document.querySelector("#stay-home"),
         c2019Heading: document.querySelector("#c2019> h3")
     }
 
@@ -688,6 +689,25 @@
     let textNumber = 0;
     const digiText = ["We are digital", "We are online", "We are virtual"];
     window.addEventListener("scroll", e => {
+        if (window.outerWidth <= breakpoints.width.minDesktop) {
+            document.querySelectorAll("#date > span").forEach(a => {
+                let aY = a.getBoundingClientRect().y;
+                let digitalRect = elements.digital.getBoundingClientRect();
+                let headerRect = elements.header.getBoundingClientRect();
+                let stayHomeRect = elements.stayHome.getBoundingClientRect();
+
+                if ((digitalRect.y < aY && digitalRect.y + digitalRect.height > aY) || (stayHomeRect.y < aY && stayHomeRect.y + stayHomeRect.height > aY)) {
+                    a.style.color = "white";
+                } else if (aY < headerRect.y + headerRect.height) {
+                    a.style.color = "var(--primary-color)";
+                } else {
+                    a.style.color = "var(--primary-color)";
+                }
+
+            });
+        }
+
+
         if (window.outerWidth >= breakpoints.width.minDesktop) {
             if ((window.scrollY + window.outerHeight >= elements.digitalHeader.offsetTop + 0.3 * window.outerHeight) &&
                 elements.digitalHeader.textContent.length === 0 && window.scrollY < elements.habitat.offsetTop) {
@@ -713,11 +733,11 @@
             if (elements.digital.offsetTop < mouseY) {
                 document.querySelector(".cls-2").style.fill = "White";
             } else {
-                document.querySelector(".cls-2").style.fill = "#6866ee";
+                document.querySelector(".cls-2").style.fill = "var(--primary-color)";
             }
 
             if (elements.digital.offsetTop + elements.digital.offsetHeight < mouseY) {
-                document.querySelector(".cls-2").style.fill = "#6866ee";
+                document.querySelector(".cls-2").style.fill = "var(--primary-color)";
             }
         };
 

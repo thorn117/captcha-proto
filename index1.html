@@ -15,18 +15,19 @@
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
-     :root {
+
+    :root {
         --primary-color: #6866ee;
         --captcha-2019-primary: #4e1e6f;
         --bg-grey: #ededed;
         --top-bar-height: 80px;
     }
-    
-     ::selection {
+
+    ::selection {
         color: white;
         background: var(--primary-color);
     }
-    
+
     #animatedlogo {
         display: none;
         position: absolute;
@@ -37,19 +38,21 @@
         height: 100px;
         animation: bigger 5s infinite;
     }
-    
+
     @keyframes bigger {
         0% {
             transform: scale(1);
         }
+
         50% {
             transform: scale(1.2);
         }
+
         100% {
             transform: scale(1);
         }
     }
-    
+
     body {
         margin: 0 !important;
         padding: 0 !important;
@@ -58,29 +61,29 @@
         overflow-x: hidden !important;
         font-size: 17px;
     }
-    
+
     h1 {
         font-weight: 800;
         color: var(--primary-color);
     }
-    
+
     h2 {
         color: var(--primary-color);
         font-size: 1.6em;
     }
-    
+
     h3 {
         color: var(--primary-color);
     }
-    
+
     a {
         text-decoration: none;
     }
-    
+
     .font-blue {
         color: var(--primary-color);
     }
-    
+
     #top-bar {
         position: absolute;
         top: 20px;
@@ -88,41 +91,42 @@
         overflow-x: hidden;
         color: var(--primary-color);
     }
-    
+
     .marquee {
         white-space: nowrap;
         overflow-x: hidden;
     }
-    
+
     .marquee span {
         display: inline-block;
         padding-left: 0;
         animation: marquee 1600s linear infinite;
     }
-    
+
     @keyframes marquee {
         0% {
             transform: translate(0, 0);
         }
+
         100% {
             transform: translate(-100%, 0);
         }
     }
-    
+
     .section {
         max-width: 100vw;
         padding: 3em 28px 3em 28px;
     }
-    
+
     #header {
         background: var(--bg-grey);
     }
-    
+
     #header h1 {
         font-size: 2.38em;
         padding-top: 30vh;
     }
-    
+
     #date {
         display: flex;
         white-space: nowrap;
@@ -134,68 +138,68 @@
         height: calc(100vh - var(--top-bar-height));
         font-size: 0.76em;
     }
-    
+
     #digital p::selection {
         color: var(--primary-color);
         background: white;
     }
-    
+
     #digital {
         background: var(--primary-color);
         color: white;
     }
-    
+
     #digital h2 {
         display: none;
     }
-    
+
     #cite {
         background: var(--bg-grey);
         padding-top: 25vh;
         padding-bottom: 25vh;
     }
-    
+
     #stay-home {
         background: var(--primary-color);
         color: white;
     }
-    
+
     .cls-1 {
         fill: white;
     }
-    
+
     .cls-2 {
         fill: var(--primary-color);
     }
-    
+
     #logo svg {
         height: 100px;
     }
-    
+
     #logo {
         padding-top: 1em;
         display: flex;
         justify-content: center;
         padding-bottom: 4em;
     }
-    
+
     #c2019 h3 {
         color: var(--captcha-2019-primary);
         font-weight: normal;
         font-size: 1.6em;
         cursor: pointer;
     }
-    
+
     #c2019 {
         padding-left: 38vw;
         padding-bottom: 1em;
         padding-top: 1em;
     }
-    
+
     .expand {
         height: 100vh !important;
     }
-    
+
     #ancor {
         z-index: 100;
         width: 100vw;
@@ -206,144 +210,166 @@
         left: 0;
         transition: 0.3s ease-in;
     }
-    
+
     #contact {
         color: var(--primary-color);
         padding: 3em 28px 0em 28px;
         line-height: 1.8;
     }
-    
+
     #contact a {
         color: var(--primary-color);
     }
-    
+
     #footer {
         padding: 1em;
         background: var(--primary-color);
         display: flex;
         justify-content: flex-end;
     }
-    
+
     #footer a {
         padding-right: 2em;
         color: white;
         font-size: 0.77em;
     }
-    
+
     @media only screen and (min-width: 360px) {
         body {
             font-size: 19px;
         }
+
         .section {
             padding-left: 35px;
             padding-right: 35px;
         }
+
         #contact {
             padding-left: 35px;
         }
     }
-    
+
     @media only screen and (min-width: 414px) {
         body {
             font-size: 21px;
         }
+
         .section {
             padding-left: 46px;
             padding-right: 49px;
         }
+
         #date {
             right: 15px;
         }
+
         #contact {
             padding-left: 46px;
         }
+
         #top-bar {
             top: 30px;
         }
+
         #logo svg {
             height: 115px;
         }
     }
-    
+
     @media only screen and (min-width: 460px) {
         body {
             font-size: 25px;
         }
+
         #logo svg {
             height: 135px;
         }
+
         #header h1 {
             font-size: 2.5em;
         }
     }
-    
+
     @media only screen and (min-width: 370px) and (min-height:812px) {
         .section {
             padding-top: 5em;
             padding-bottom: 6em;
         }
+
         #header h1 {
             font-size: 2.9em;
         }
+
         #header {
             padding-top: 1em;
             padding-bottom: 4em;
         }
     }
-    
+
     @media only screen and (min-width: 600px) and (min-height:850px) {
         .section {
             padding-left: 65px;
             padding-right: 65px;
         }
+
         #contact {
             padding-left: 65px;
         }
+
         #c2019 {
             padding-left: 45vw;
         }
     }
-    
+
     @media only screen and (min-width: 660px) {
         body {
             font-size: 30px;
         }
     }
-    
+
     @media only screen and (min-width: 750px) {
         #animatedlogo {
             display: block;
         }
+
         h2 {
             margin-top: 0;
             font-size: 2em;
         }
-        #contact {
-            padding-left: 90px;
+
+        #contact a {
+            color: transparent;
         }
+
         body {
             font-size: 20px;
         }
+
         .text {
             padding-left: 50px;
             padding-right: 50px;
         }
+
         .section {
             padding: 18vh 11vw 18vh 11vw;
         }
+
         #top-bar {
             display: none;
         }
+
         #header {
             height: 100vh;
             padding-top: 0px;
             padding-bottom: 0px;
         }
+
         #header h1 {
             padding-top: 38vh;
-            font-size: calc( 2vh + 50px);
+            font-size: calc(2vh + 50px);
             margin: 0;
         }
+
         #date {
             writing-mode: horizontal-tb;
             position: static;
@@ -352,6 +378,7 @@
             padding-top: 1em;
             font-size: 1em;
         }
+
         #digital h2 {
             color: white;
             display: inline;
@@ -360,14 +387,17 @@
             border-right: .05em solid;
             animation: cursor-blink 1s steps(1) infinite;
         }
+
         #digital .text {
             margin-top: 1.7em;
         }
+
         @keyframes cursor-blink {
             50% {
                 border-right-color: transparent;
             }
         }
+
         #contact {
             position: fixed;
             padding: 0;
@@ -378,95 +408,113 @@
             text-align: right;
             font-size: 0.77em;
             padding-right: 8px;
+            margin-left: 90px;
         }
+
         #cite {
             padding-top: 5em;
             padding-bottom: 2em;
         }
+
         #cite h2 {
             font-size: 1.3em;
             width: 450px;
         }
+
         #logo {
             display: none;
         }
+
         #stay-home {
             background: var(--bg-grey);
             color: black;
             padding-top: 2px;
             padding-bottom: 2em;
         }
+
         #stay-home .text .font-white {
             color: var(--primary-color);
         }
+
         #c2019 {
             background: var(--bg-grey);
             margin: 0;
             padding-left: 55vw;
         }
     }
-    
+
     @media only screen and (min-width: 950px) {
         .section {
             padding-left: 15vw;
             padding-right: 15vw;
         }
+
         #stay-home .text {
             padding-left: 0px;
             width: 450px;
         }
+
         #habitat .text .font-blue {
             padding-bottom: 1em;
         }
+
         #c-2019 {
             padding-left: 66vw;
         }
     }
-    
+
     @media only screen and (min-width: 1200px) {
         .text {
             padding-left: 145px;
             padding-right: 135px;
         }
+
         #header h1,
         #date {
             padding-left: 135px;
         }
+
         #contact {
             right: 40px;
         }
     }
-    
+
     @media only screen and (min-width: 1400px) {
         body {
             font-size: 25px;
         }
+
         #header h1 {
             font-size: 9vh;
         }
+
         .text,
         #header h1,
         #date {
             padding-left: 170px;
         }
+
         .section {
             padding: 20vh 14vw 20vh 14vw;
         }
     }
-    
+
     @media only screen and (min-width: 1600px) {
         body {
             font-size: 28px;
         }
+
         .text,
         #date,
         #header h1 {
             padding-left: 216px;
             padding-right: 216px;
         }
+
         #contact {
             right: 11vw;
         }
+
         #footer {
             padding-right: calc(11vw - 2em);
         }
@@ -482,26 +530,37 @@
     </div>
 
     <div id="animatedlogo"><svg id="Ebene_1" data-name="Ebene 1" viewBox="0 0 357.53 471.65">
-        <path class="cls-2"
-            d="M428.36,176.66c-46.48,28-72.07,30.14-102.33-3.58-29.53-46.66-112-37.78-119.89,5.38,2.68,40.87,39.34,82.29,56.43,117.38,17.36,45.5,34.51,133.14,68.78,141,17.09,3.93,38.11-1.79,55.43-36.9,4.62-29-4.48-56.43,1.85-70.5,3.39-7.54,21.48-8.08,37.42-15,28.89-12.57,35.57,5.18,38.57,30.95,4.85,41.71-10,108.06-20.67,127-33.5,59.13-107.15,61.14-152.66,48.1-99-62.84-84.35-111.88-103.38-157.76-64.6-92.12-81-99.64-79.81-195.4,1.44-39.84,22.3-46.95,60.44-80.08C303.63-15.63,439.44,162.11,428.36,176.66Z"
-            transform="translate(-108.04 -55.36)" />
-    </svg></div>
+            <path class="cls-2"
+                d="M428.36,176.66c-46.48,28-72.07,30.14-102.33-3.58-29.53-46.66-112-37.78-119.89,5.38,2.68,40.87,39.34,82.29,56.43,117.38,17.36,45.5,34.51,133.14,68.78,141,17.09,3.93,38.11-1.79,55.43-36.9,4.62-29-4.48-56.43,1.85-70.5,3.39-7.54,21.48-8.08,37.42-15,28.89-12.57,35.57,5.18,38.57,30.95,4.85,41.71-10,108.06-20.67,127-33.5,59.13-107.15,61.14-152.66,48.1-99-62.84-84.35-111.88-103.38-157.76-64.6-92.12-81-99.64-79.81-195.4,1.44-39.84,22.3-46.95,60.44-80.08C303.63-15.63,439.44,162.11,428.36,176.66Z"
+                transform="translate(-108.04 -55.36)" />
+        </svg></div>
 
     <div id="header" class="section">
         <h1>
             Captcha<br> Design
             <br> Festival 2020</h1>
-        <div id="date"><span class="letter">3</span><span class="letter">1</span><span class="letter">.</span> <span class="letter">A</span><span class="letter">U</span><span class="letter">G</span><span class="letter">U</span><span class="letter">S</span><span class="letter">T</span>            <span class="letter">—</span> <span class="letter">1</span><span class="letter">5</span><span class="letter">.</span> <span class="letter">S</span><span class="letter">E</span><span class="letter">P</span><span class="letter">T</span>
-            <span class="letter">E</span><span class="letter">M</span><span class="letter">B</span><span class="letter">E</span><span class="letter">R</span></div>
+        <div id="date"><span class="letter">3</span><span class="letter">1</span><span class="letter">.</span> <span
+                class="letter">A</span><span class="letter">U</span><span class="letter">G</span><span
+                class="letter">U</span><span class="letter">S</span><span class="letter">T</span> <span
+                class="letter">—</span> <span class="letter">1</span><span class="letter">5</span><span
+                class="letter">.</span> <span class="letter">S</span><span class="letter">E</span><span
+                class="letter">P</span><span class="letter">T</span>
+            <span class="letter">E</span><span class="letter">M</span><span class="letter">B</span><span
+                class="letter">E</span><span class="letter">R</span></div>
     </div>
 
     <div id="digital" class="section regular">
         <h2 id="digitalHeader"></h2>
 
         <div class="text">
-            <p>The CAPTCHA Design Festival will be taking place for the 7th time this August. It is organized by students of the University of Applied Sciences Mannheim. </p>
-            <p>Meeting this year in Mannheim might be impossible for most of us. Yet, Captcha is an amazing event and we will not cancel it. Therefore we have decided to provide you with a virtual Captcha Version. True to our tradition, there will be an
-                initial single-day symposium, a following week of four different workshops, and a final virtual exhibition. Workshop leaders and participants worldwide connect and communicate via digital tools. We are eagerly working on creating a virtual
+            <p>The CAPTCHA Design Festival will be taking place for the 7th time this August. It is organized by
+                students of the University of Applied Sciences Mannheim. </p>
+            <p>Meeting this year in Mannheim might be impossible for most of us. Yet, Captcha is an amazing event and we
+                will not cancel it. Therefore we have decided to provide you with a virtual Captcha Version. True to our
+                tradition, there will be an
+                initial single-day symposium, a following week of four different workshops, and a final virtual
+                exhibition. Workshop leaders and participants worldwide connect and communicate via digital tools. We
+                are eagerly working on creating a virtual
                 experience close to real life.
             </p>
         </div>
@@ -511,18 +570,23 @@
         <h2>Habitat</h2>
         <div class="text">
             <div class="font-blue">from lat. habitāre | [ˈhæb.ə.tæt]</div>
-            <p>This year's topic for the festival is <span class="font-blue">HABITAT</span>. In a biological context, the term is used to describe the natural environment for living organisms of all kinds. As we inhabit cities and villages, microorganisms
+            <p>This year's topic for the festival is <span class="font-blue">HABITAT</span>. In a biological context,
+                the term is used to describe the natural environment for living organisms of all kinds. As we inhabit
+                cities and villages, microorganisms
                 such as bacteria and viruses inhabit us.</p>
 
             <p>In our modern society especially during the ongoing pandemic, <span class="font-blue">we do not simply
                     live in the natural, real
-                    world</span>. Our minds have merged with another non-physical habitat: the digital one. Within our online design festival Captcha 2020 we create spheres in which we explore the limits, variety and endangering of habitats.</p>
+                    world</span>. Our minds have merged with another non-physical habitat: the digital one. Within our
+                online design festival Captcha 2020 we create spheres in which we explore the limits, variety and
+                endangering of habitats.</p>
         </div>
     </div>
 
     <div id="end">
         <div id="cite" class="section regular">
-            <h2>Be prepared for a futuristic workspace, interdisciplinary projects and an exchange of extraordinary ideas.
+            <h2>Be prepared for a futuristic workspace, interdisciplinary projects and an exchange of extraordinary
+                ideas.
             </h2>
         </div>
 
@@ -535,13 +599,15 @@
                 </svg>
             </div>
             <div class="text">
-                <p>As organizers we are aware of our responsibility towards all designers and participants and take this pandemic very seriously. So stay safe, stay home and <span class="font-white">#FlattenTheCurve!</span> </p>
+                <p>As organizers we are aware of our responsibility towards all designers and participants and take this
+                    pandemic very seriously. So stay safe, stay home and <span
+                        class="font-white">#FlattenTheCurve!</span> </p>
             </div>
         </div>
     </div>
 
     <div id="contact">
-        contact us &lt;3 <br>
+        <a>contact us &lt;3 <br></a>
         <a href="mailto:hello@captcha-mannheim.de">mail</a> <br>
         <a href="https://www.instagram.com/captchamannheim">instagram</a> <br>
         <a href="https://www.facebook.com/captchamannheim">facebook</a> </div>
@@ -565,7 +631,10 @@
             main: document.querySelector("#top-bar"),
             text: document.querySelector(".marquee-text")
         },
-        digital: document.querySelector("#digitalHeader"),
+        habitat: document.querySelector("#habitat"),
+        header: document.querySelector("#header"),
+        digital: document.querySelector("#digital"),
+        digitalHeader: document.querySelector("#digitalHeader"),
         c2019Heading: document.querySelector("#c2019> h3")
     }
 
@@ -629,14 +698,32 @@
             digital.insertBefore(digitalheadlinediv, digital.childNodes[0]);*/
         }
     }));
-
+    let textNumber = 0;
+    const digiText = ["We are digital", "We are online", "We are virtual"];
     window.addEventListener("scroll", e => {
         if (window.outerWidth >= breakpoints.width.minDesktop) {
-            if ((window.scrollY + window.outerHeight >= elements.digital.offsetTop + 0.3 * window.outerHeight) &&
-                elements.digital.textContent.length === 0) {
-                write("We are digital", elements.digital, 100);
+            if ((window.scrollY + window.outerHeight >= elements.digitalHeader.offsetTop + 0.3 * window.outerHeight) &&
+                elements.digitalHeader.textContent.length === 0 && window.scrollY < elements.habitat.offsetTop ) {
+                write(digiText[textNumber++ % 3], elements.digitalHeader, 100);
+            } else if (window.scrollY > elements.habitat.offsetTop ) {
+                elements.digitalHeader.textContent = "";
             }
+
+            document.querySelectorAll("#contact > a").forEach(a => {
+                let aY = a.getBoundingClientRect().y;
+                let digitalRect = elements.digital.getBoundingClientRect();
+                let headerRect = elements.header.getBoundingClientRect();
+
+                if (digitalRect.y < aY && digitalRect.y + digitalRect.height > aY) {
+                    a.style.color = "white";
+                } else if (aY < headerRect.y + headerRect.height) {
+                    a.style.color = "transparent";
+                } else {
+                    a.style.color = "var(--primary-color)";
+                }
+            });
         };
+
     });
 
 

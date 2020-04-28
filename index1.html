@@ -223,7 +223,6 @@
         padding-top: 1em;
         padding-bottom: 2em;
         background: var(--primary-color);
-        padding-right: 10px;
     }
     
     #footer a {
@@ -237,12 +236,10 @@
         body {
             font-size: 19px;
         }
-        .section {
-            padding-left: 35px;
-            padding-right: 35px;
-        }
+        .section,
         #contact {
             padding-left: 35px;
+            padding-right: 35px;
         }
     }
     
@@ -250,7 +247,8 @@
         body {
             font-size: 21px;
         }
-        .section {
+        .section,
+        #contact {
             padding-left: 46px;
             padding-right: 49px;
         }
@@ -259,9 +257,6 @@
         }
         #date {
             right: 15px;
-        }
-        #contact {
-            padding-left: 46px;
         }
         #top-bar {
             top: 30px;
@@ -706,18 +701,6 @@
         }
     });
 
-    ['load', 'resize'].forEach(e => window.addEventListener(e, () => {
-        if (window.outerWidth >= breakpoints.width.minDesktop && window.outerHeight <= breakpoints.height.maxDesktop) {
-            /*elements.marqueeBar.main.remove(elements.marqueeBar.main);
-            var digitalheadlinediv = document.createElement("div");
-            var digitalText = document.createElement("h2");
-            var node = document.createTextNode("WE ARE DIGITAL");
-            digitalText.appendChild(node);
-            digitalheadlinediv.appendChild(digitalText);
-            digitalheadlinediv.setAttribute('id', "digitalheadline");
-            digital.insertBefore(digitalheadlinediv, digital.childNodes[0]);*/
-        }
-    }));
     let textNumber = 0;
     const digiText = ["We are digital", "We are online", "We are virtual"];
     window.addEventListener("scroll", e => {

@@ -317,6 +317,7 @@
     @media only screen and (min-width: 750px) {
         #animatedlogo {
             display: block;
+            cursor: none;
         }
         h2 {
             margin-top: 0;
@@ -355,6 +356,7 @@
             align-items: flex-start;
             padding-top: 1em;
             font-size: 1em;
+            color: black;
         }
         #digital h2 {
             color: white;
@@ -433,10 +435,10 @@
     @media only screen and (min-width: 1200px) {
         .text {
             padding-left: 145px;
-            padding-right: 135px;
+            padding-right: 145px;
         }
         #c2019 {
-            padding-right: calc(15vw + 135px);
+            padding-right: calc(15vw + 145px);
         }
         #header h1,
         #date {
@@ -466,6 +468,10 @@
             margin-top: -309px;
             padding-bottom: 17em;
         }
+        #cite h2,
+        #stay-home .text {
+            width: 560px;
+        }
     }
     
     @media only screen and (min-width: 1600px) {
@@ -492,34 +498,48 @@
     
     @media only screen and (min-width: 2100px) {
         body {
-            font-size: 35px;
+            font-size: 32px;
         }
         .section {
-            padding-top: 25vh;
-            padding-bottom: 25vh;
+            padding: 25vh 20vw 25vh 20vw;
         }
         #cite h2,
         #stay-home .text {
-            width: 840px;
+            width: 730px;
+        }
+        #c2019 {
+            padding-right: calc(18vw + 233px);
         }
         #date,
         #header h1,
         .text {
-            padding-left: 262px;
+            padding-left: 233px;
+            padding-right: 233px;
         }
     }
     
     @media only screen and (min-width: 2800px) {
         body {
-            font-size: 46px;
+            font-size: 38px;
+        }
+        .section {
+            padding-right: 24vw;
+            padding-left: 24vw;
         }
         #c2019 {
-            margin-top: -490px;
+            margin-top: -435px;
         }
         #date,
         #header h1,
         .text {
-            padding-left: 335px;
+            padding-left: 278px;
+            padding-right: 278px;
+        }
+        #footer a {
+            padding-right: 77px;
+        }
+        #contact {
+            right: 146px;
         }
     }
 </style>
@@ -604,8 +624,8 @@
         <div id="ancor"></div>
     </div>
     <div id="footer">
-        <a>Imprint</a>
-        <a>Privacy Policy</a>
+        <a href="http://captchamannheim.de/imprint.html">Imprint</a>
+        <a href="http://captchamannheim.de/privacy-policy.html">Privacy Policy</a>
     </div>
 </body>
 
@@ -623,7 +643,8 @@
         digital: document.querySelector("#digital"),
         digitalHeader: document.querySelector("#digitalHeader"),
         stayHome: document.querySelector("#stay-home"),
-        c2019Heading: document.querySelector("#c2019> h3")
+        c2019Heading: document.querySelector("#c2019> h3"),
+        footer: document.querySelector("#footer")
     }
 
 
@@ -647,9 +668,11 @@
 
     let speed = 0.04;
 
+    let mousedistance = 10;
+
     function animate() {
-        let distX = mouseX - logoX + 100;
-        let distY = mouseY - logoY + 100;
+        let distX = mouseX - logoX + mousedistance;
+        let distY = mouseY - logoY + mousedistance;
 
         logoX = logoX + (distX * speed);
         logoY = logoY + (distY * speed);
@@ -665,6 +688,15 @@
     document.addEventListener('mousemove', event => {
         mouseX = event.pageX
         mouseY = event.pageY
+        if (elements.digital.offsetTop < mouseY - mousedistance) {
+            document.querySelector(".cls-2").style.fill = "White";
+        } else {
+            document.querySelector(".cls-2").style.fill = "var(--primary-color)";
+        }
+
+        if (elements.digital.offsetTop + elements.digital.offsetHeight < mouseY - mousedistance) {
+            document.querySelector(".cls-2").style.fill = "var(--primary-color)";
+        }
 
     });
 
@@ -729,16 +761,6 @@
                     a.style.color = "var(--primary-color)";
                 }
             });
-
-            if (elements.digital.offsetTop < mouseY) {
-                document.querySelector(".cls-2").style.fill = "White";
-            } else {
-                document.querySelector(".cls-2").style.fill = "var(--primary-color)";
-            }
-
-            if (elements.digital.offsetTop + elements.digital.offsetHeight < mouseY) {
-                document.querySelector(".cls-2").style.fill = "var(--primary-color)";
-            }
         };
 
     });
